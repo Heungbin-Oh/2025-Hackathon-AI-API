@@ -1,9 +1,4 @@
 fastapi==0.95.0
 uvicorn==0.20.0
-pydantic==1.10.9
-Pillow==9.5.0
-transformers==4.48.3
-langchain==0.0.343
-openai==0.27.0
-python-dotenv==1.0.1
-python-multipart==0.0.20
+openai==1.14.0
+python-multipart==0.0.6

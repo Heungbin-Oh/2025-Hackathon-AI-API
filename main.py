@@ -19,7 +19,7 @@ app = FastAPI(title="Donation Categorization API")
 # CORS configuration: allowing requests from any origin (you can change it for production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080"],  # Allow all origins for testing; change this for production
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers

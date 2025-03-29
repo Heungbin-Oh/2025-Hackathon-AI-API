@@ -43,7 +43,7 @@ async def categorize_donation(
         b64_image = base64.b64encode(img_bytes).decode("utf-8")
 
         try:
-            response = openai.chat.completions.create(
+            response = openai.ChatCompletion.create(
                 model="gpt-4-turbo",
                 messages=[
                     {
@@ -67,13 +67,13 @@ async def categorize_donation(
     Choose the best category from this list: {', '.join(CATEGORIES)}.
 
     Respond with strict JSON only:
-    - {{"category": ["Category Name"]}} if matched
-    - {{"status": "NoCategory"}} if none
-    - {{"status": "TrollDetected"}} if inappropriate
+    - {"category": ["Category Name"]} if matched
+    - {"status": "NoCategory"} if none
+    - {"status": "TrollDetected"} if inappropriate
     """
 
     try:
-        result = openai.chat.completions.create(
+        result = openai.ChatCompletion.create(
             model="gpt-4-turbo",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
